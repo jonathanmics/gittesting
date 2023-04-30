@@ -1,0 +1,59 @@
+<head>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+
+</style>
+</head>
+
+<div id="container"> 
+
+</div>
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+<input type="text" id="text"><button id="send">Send </button>
+
+<script>
+    
+
+document.getElementById('send').addEventListener('click', function(){
+  var tweet = document.getElementById('text').value;
+
+    document.cookie = "tweet=" + tweet;
+    i = 0;
+    if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+        location.reload();
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+
+});
+</script>
+
+<div>hey</div>
+
+<div>hey</div>
+
+<div>hello</div>
+
+<div>hello guys</div>
